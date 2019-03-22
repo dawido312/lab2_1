@@ -44,5 +44,13 @@ public class BinarySearchTest {
         Assert.assertEquals(sr.getPosition(),2);
     }
 
+    @Test public void searchTest6()
+    {
+        int[] seq = {1, 2, 3};
+        SearchResult sr = BinarySearch.search(4, seq);
+        Assert.assertFalse(sr.isFound());
+        Assert.assertNotEquals(sr.getPosition(),4);
+    }
+
 
 }
