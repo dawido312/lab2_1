@@ -48,4 +48,12 @@ public class BinarySearchTest {
 
     }
 
+    @Test public void searchTest7()
+    {
+        int[] seq = {};
+        SearchResult sr = BinarySearch.search(7, seq);
+        Assert.assertThat(!sr.isFound()&&sr.getPosition()==-1, is(true));
+
+    }
+
 }
