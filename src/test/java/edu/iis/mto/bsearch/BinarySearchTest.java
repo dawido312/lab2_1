@@ -56,4 +56,13 @@ public class BinarySearchTest {
 
     }
 
+    @Test public void searchTest8()
+    {
+        int [] seq=null;
+        try {
+            SearchResult sr = BinarySearch.search(7, seq);
+        }catch(NullPointerException e){}
+
+    }
+
 }
