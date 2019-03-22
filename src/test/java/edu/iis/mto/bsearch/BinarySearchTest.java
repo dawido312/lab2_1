@@ -32,48 +32,50 @@ public class BinarySearchTest {
     @Test public void searchTest4() {
         int[] seq = {1, 2, 3, 4};
         SearchResult sr = BinarySearch.search(4, seq);
-        Assert.assertThat(sr.isFound()&&sr.getPosition()==4, is(true));
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 4, is(true));
     }
 
     @Test public void searchTest5() {
-        int[] seq = {1, 2, 3,4, 5};
+        int[] seq = {1, 2, 3, 4, 5};
         SearchResult sr = BinarySearch.search(3, seq);
-        Assert.assertThat(sr.isFound()&&sr.getPosition()==3, is(true));
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 3, is(true));
 
     }
 
     @Test public void searchTest6() {
         int[] seq = {1, 2};
         SearchResult sr = BinarySearch.search(4, seq);
-        Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(false));
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 2, is(false));
 
     }
 
-    @Test public void searchTest7()
-    {
+    @Test public void searchTest7() {
         int[] seq = {};
         SearchResult sr = BinarySearch.search(7, seq);
-        Assert.assertThat(!sr.isFound()&&sr.getPosition()==-1, is(true));
+        Assert.assertThat(!sr.isFound() && sr.getPosition() == -1, is(true));
 
     }
 
-    @Test public void searchTest8()
-    {
-        int [] seq=null;
+    @Test public void searchTest8() {
+        int[] seq = null;
         try {
             SearchResult sr = BinarySearch.search(7, seq);
-        }catch(NullPointerException e){}
+        } catch (NullPointerException e) {
+        }
 
     }
-    @Test public void searchTest9()
-    {
-        int [] seq = {5,3,1};
+
+    @Test public void searchTest9() {
+        int[] seq = {5, 3, 1};
         SearchResult sr = BinarySearch.search(5, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 1, is(false));
 
-
-
     }
 
+    @Test public void searchTest10() {
+        int[] seq = {5, 9, 7, 1};
+        SearchResult sr = BinarySearch.search(1, seq);
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 4, is(false));
+    }
 
 }
