@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Math.pow;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -29,20 +30,20 @@ public class BinarySearchTest {
     }
 
     @Test public void searchTest4() {
-        int[] seq = {1, 2, 3};
+        int[] seq = {1, 2, 3, 4};
         SearchResult sr = BinarySearch.search(3, seq);
         Assert.assertThat(sr.isFound()&&sr.getPosition()==3, is(true));
     }
 
     @Test public void searchTest5() {
-        int[] seq = {1, 2, 3};
+        int[] seq = {1, 2, 3,4, 5};
         SearchResult sr = BinarySearch.search(2, seq);
         Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(true));
 
     }
 
     @Test public void searchTest6() {
-        int[] seq = {1, 2, 3};
+        int[] seq = {1, 2};
         SearchResult sr = BinarySearch.search(4, seq);
         Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(false));
 
@@ -64,5 +65,6 @@ public class BinarySearchTest {
         }catch(NullPointerException e){}
 
     }
+
 
 }
