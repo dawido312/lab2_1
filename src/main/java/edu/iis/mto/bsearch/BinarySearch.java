@@ -5,21 +5,19 @@ package edu.iis.mto.bsearch;
 
 /**
  * Utility Class dla wyszukiwania binarnego
- *
  */
 public class BinarySearch {
 
-    private BinarySearch() {}
+    private BinarySearch() {
+    }
 
     /**
      * Metoda realizujaca wyszukiwanie binarne
      *
-     * @param key
-     *            - szukany obiekt
-     * @param seq
-     *            - rosnaco uporzadkowana niepusta sekwencja
+     * @param key - szukany obiekt
+     * @param seq - rosnaco uporzadkowana niepusta sekwencja
      * @return obiekt rezultatu o polach: - found (true jezeli znaleziony) - position (jezeli znaleziony - pozycja w
-     *         sekwencji, jezeli nie znaleziony -1)
+     * sekwencji, jezeli nie znaleziony -1)
      */
     public static SearchResult search(int key, int[] seq) {
         int start = 0;
