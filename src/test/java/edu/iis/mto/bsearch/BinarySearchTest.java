@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class BinarySearchTest {
@@ -11,46 +13,39 @@ public class BinarySearchTest {
     @Test public void searchTest() {
         int[] seq = {5};
         SearchResult sr = BinarySearch.search(5, seq);
-        Assert.assertTrue(sr.isFound());
+        Assert.assertThat(sr.isFound(), is(true));
     }
 
-    @Test public void searchTest2(){
+    @Test public void searchTest2() {
         int[] seq = {5};
         SearchResult sr = BinarySearch.search(0, seq);
-        Assert.assertFalse(sr.isFound());
+        Assert.assertThat(sr.isFound(), is(false));
     }
 
-    @Test public void searchTest3()
-    {
+    @Test public void searchTest3() {
         int[] seq = {1, 2, 3};
         SearchResult sr = BinarySearch.search(1, seq);
-        Assert.assertTrue(sr.isFound());
-        Assert.assertEquals(sr.getPosition(),1);
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 1, is(true));
     }
 
-    @Test public void searchTest4()
-    {
+    @Test public void searchTest4() {
         int[] seq = {1, 2, 3};
         SearchResult sr = BinarySearch.search(3, seq);
-        Assert.assertTrue(sr.isFound());
-        Assert.assertEquals(sr.getPosition(),3);
+        Assert.assertThat(sr.isFound()&&sr.getPosition()==3, is(true));
     }
 
-    @Test public void searchTest5()
-    {
+    @Test public void searchTest5() {
         int[] seq = {1, 2, 3};
         SearchResult sr = BinarySearch.search(2, seq);
-        Assert.assertTrue(sr.isFound());
-        Assert.assertEquals(sr.getPosition(),2);
+        Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(true));
+
     }
 
-    @Test public void searchTest6()
-    {
+    @Test public void searchTest6() {
         int[] seq = {1, 2, 3};
         SearchResult sr = BinarySearch.search(4, seq);
-        Assert.assertFalse(sr.isFound());
-        Assert.assertNotEquals(sr.getPosition(),4);
-    }
+        Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(false));
 
+    }
 
 }
