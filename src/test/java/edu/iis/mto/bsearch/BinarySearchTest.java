@@ -31,14 +31,14 @@ public class BinarySearchTest {
 
     @Test public void searchTest4() {
         int[] seq = {1, 2, 3, 4};
-        SearchResult sr = BinarySearch.search(3, seq);
-        Assert.assertThat(sr.isFound()&&sr.getPosition()==3, is(true));
+        SearchResult sr = BinarySearch.search(4, seq);
+        Assert.assertThat(sr.isFound()&&sr.getPosition()==4, is(true));
     }
 
     @Test public void searchTest5() {
         int[] seq = {1, 2, 3,4, 5};
-        SearchResult sr = BinarySearch.search(2, seq);
-        Assert.assertThat(sr.isFound()&&sr.getPosition()==2, is(true));
+        SearchResult sr = BinarySearch.search(3, seq);
+        Assert.assertThat(sr.isFound()&&sr.getPosition()==3, is(true));
 
     }
 
@@ -63,6 +63,15 @@ public class BinarySearchTest {
         try {
             SearchResult sr = BinarySearch.search(7, seq);
         }catch(NullPointerException e){}
+
+    }
+    @Test public void searchTest9()
+    {
+        int [] seq = {5,3,1};
+        SearchResult sr = BinarySearch.search(5, seq);
+        Assert.assertThat(sr.isFound() && sr.getPosition() == 1, is(false));
+
+
 
     }
 
