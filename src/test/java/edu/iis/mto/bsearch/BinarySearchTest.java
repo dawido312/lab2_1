@@ -56,13 +56,9 @@ public class BinarySearchTest {
 
     }
 
-    @Test public void searchTestWithNullSequence() {
+    @Test(expected = NullPointerException.class) public void searchTestWithNullSequence() {
         int[] seq = null;
-        try {
-            SearchResult sr = BinarySearch.search(7, seq);
-        } catch (NullPointerException e) {
-        }
-
+        SearchResult sr = BinarySearch.search(7, seq);
     }
 
     @Test public void searchTestWithDescendingSequence() {
