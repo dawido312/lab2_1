@@ -11,52 +11,52 @@ import static org.junit.Assert.*;
 
 public class BinarySearchTest {
 
-    @Test public void searchTest() {
+    @Test public void searchTestWithOneElementWhichIsInSequence() {
         int[] seq = {5};
         SearchResult sr = BinarySearch.search(5, seq);
         Assert.assertThat(sr.isFound(), is(true));
     }
 
-    @Test public void searchTest2() {
+    @Test public void searchTestWithOneElementWhichIsNotInSequence() {
         int[] seq = {5};
         SearchResult sr = BinarySearch.search(0, seq);
         Assert.assertThat(sr.isFound(), is(false));
     }
 
-    @Test public void searchTest3() {
+    @Test public void searchTestWithSearchingElementInFirstPlace() {
         int[] seq = {1, 2, 3};
         SearchResult sr = BinarySearch.search(1, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 1, is(true));
     }
 
-    @Test public void searchTest4() {
+    @Test public void searchTestWithSearchingElementInLastPlace() {
         int[] seq = {1, 2, 3, 4};
         SearchResult sr = BinarySearch.search(4, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 4, is(true));
     }
 
-    @Test public void searchTest5() {
+    @Test public void searchTestWithSearchingElementInMiddlePosition() {
         int[] seq = {1, 2, 3, 4, 5};
         SearchResult sr = BinarySearch.search(3, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 3, is(true));
 
     }
 
-    @Test public void searchTest6() {
+    @Test public void searchTestWithSearchingElementIsNotInSequence() {
         int[] seq = {1, 2};
         SearchResult sr = BinarySearch.search(4, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 2, is(false));
 
     }
 
-    @Test public void searchTest7() {
+    @Test public void searchTestWithEmptySequence() {
         int[] seq = {};
         SearchResult sr = BinarySearch.search(7, seq);
         Assert.assertThat(!sr.isFound() && sr.getPosition() == -1, is(true));
 
     }
 
-    @Test public void searchTest8() {
+    @Test public void searchTestWithNullSequence() {
         int[] seq = null;
         try {
             SearchResult sr = BinarySearch.search(7, seq);
@@ -65,14 +65,14 @@ public class BinarySearchTest {
 
     }
 
-    @Test public void searchTest9() {
+    @Test public void searchTestWithDescendingSequence() {
         int[] seq = {5, 3, 1};
         SearchResult sr = BinarySearch.search(5, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 1, is(false));
 
     }
 
-    @Test public void searchTest10() {
+    @Test public void searchTestWithUnorderedSequence() {
         int[] seq = {5, 9, 7, 1};
         SearchResult sr = BinarySearch.search(1, seq);
         Assert.assertThat(sr.isFound() && sr.getPosition() == 4, is(false));
